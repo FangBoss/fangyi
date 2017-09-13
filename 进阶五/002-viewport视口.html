@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+			<!--
+				“initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no”	
+				视口的宽等于设备的宽
+				initical-scale=1
+				在移动设备上出事的呈现比例
+				minimum-scale=1
+				最小的缩放比例
+				maximum-scale=1
+				最大的缩放比例
+				user-scalable=no
+				不允许用户进行缩放
+			-->
+		<title></title>
+		<style type="text/css">
+			.box1{
+				width: 50%;
+				height: 50vh;
+				background: red;
+				/*css像素，逻辑像素*/
+			}
+		</style>
+	</head>
+	<body>
+		<!--viewport
+		1.虚拟的视口，通过对PC端页面进行一定比例低的缩放，
+		让页面适应手机端，默认视口的宽度是980px
+		2.它的功能就在于统一物理和逻辑像素-->
+		<!--1.物理像素
+			也就是设备在生产之前已经确定过的屏幕像素
+			2.逻辑像素或者css像素或者显示像素
+			它是为开发者设计的。也就是我们写css样式时用到的单位
+		-->
+		<!--DPR
+			devicePixelRatio
+		是物理像素/css像素的比值，DPR越高，则画面越清晰，越细腻-->
+		<div class="box1"></div>
+	</body>
+	<script type="text/javascript">
+		document.write(window.innerWidth+"</br>");
+		document.write(window.devicePixelRatio);
+	</script>
+</html>

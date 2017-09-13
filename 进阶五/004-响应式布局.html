@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<style type="text/css">
+			html,body{
+				width: 100%;
+				margin: 0;
+				padding: 0;
+			}
+			.box{
+				width: 100%;
+				height: 200px;
+				background: black;
+			}
+			@media only screen and (min-width:421px ) {
+				/*屏幕也是媒体：screen的宽至少400px的情况下，
+				 页面呈现的样式*/
+				.box{
+					background: pink;
+				}
+			}
+			@media only screen and (min-width: 401px) and (max-width: 420px) {
+				.box{
+					background: orange;
+									}
+			}
+			@media only screen and (max-width:400px ) {
+				/*屏幕的宽至多500px的情况下，呈现的样式*/
+				.box{
+					background: deepskyblue;
+				}
+			}
+			@media only print{
+				a:link,a:visited,a:hover,a:active,a{
+					text-decoration: none;
+				}
+			}
+			
+			@media only screen and (orientation:portrait ) {
+				.box2{
+					background: cyan;
+				}
+			}
+			
+			@media only screen and (min-width:700px) and (orientation:landscape ) {
+				.box2{
+					background: springgreen;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+			响应式布局
+			1.弹性网络
+			2.弹性图片
+			3.媒体查询
+		-->
+		<!--
+			常用的媒体类型
+			1.screen
+			2.print 打印样式
+		-->
+		<!--
+			常用的媒体类型属性
+			1.width  可以加min- 或者max-前缀
+			2.height  可以加min- 或者max-前缀
+			3.orientation 检测横屏还是竖屏
+			4.device-width
+			5.device-height
+		-->
+		<!--媒体查询兼容性问题
+			1.标准浏览器@media only screen
+			识别到的媒体是screen
+			2.老版本IE @media only screen
+			识别到的是only
+			所以在老版本ie下，@media screen
+		-->
+		<!--
+			逻辑符
+			and and两端的条件都满足。返回一个true 执行条件样式，当其中但凡有一个条件不满足，则返还false，条件不执行；
+			or  or两端条件只要满足一个，则返回true，执行条件样式
+			not
+			only
+		-->
+		<div class="box"></div>
+		<a href="https://www.baidu.com">前往未来</a>
+		<div class="box2">的撒旦</div>
+	</body>
+	<script type="text/javascript">
+		document.write(window.innerWidth);
+	</script>
+</html>

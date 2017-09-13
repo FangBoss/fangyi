@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			.box1{
+				width: 200px;
+				height: 200px;
+				background: red;
+				/*position: relative;*/
+			}
+			.box1_son{
+				width: 50%;
+				height: 50%;
+				background: blue;
+				position: absolute;
+				left: 50%;
+			}
+			.box2{
+				font-size: 20px;
+			}
+			.box2_son{
+				width: 20em;
+				height: 20em;
+				width: 20rem;
+				height: 20rem;
+				background: pink;
+			}
+			.ch{
+				width: 10ch;
+				background: gray;
+			}
+			.ex
+			{
+				background: red;
+				height:1ex;
+				width: 100%;
+				font-size: 15px;
+			}
+			h3{
+				position: absolute;
+				top: 527px;
+				font-size: 15px;
+			}
+		</style>
+	</head>
+	<body>
+		<!--px,deg-->
+		<!--100%
+			一般情况下是相对于自身的父级元素尺寸
+			2.如果元素本身是绝对定位元素，百分数相对于定位父级
+		-->
+		<!--rem，em
+			两者都是相对于父级字体尺寸
+			不同的是：
+			rem相对于根元素也就是html字体尺寸
+			em相对于直属父级的字体尺寸
+			html 默认字体16px，自己如果没有继承自定义字体，继承16px
+			在谷歌浏览器下，最小的字体会限制在12px
+		-->
+		<!--vh，vw
+			视口单位，
+			viewheight 视口的高，也就是可见区域的高
+			viewwidth 视口的宽，也就是可见区域的宽
+			默认分成100份。10份就相当于视口的10%
+		-->
+		<!--vmin vmax
+			vmin 表示从vw，vh选取小的尺寸
+			vmax 表示从vw，vh选取大的尺寸
+		-->
+		<!--calc
+			新增的计算属性
+		-->
+		<!--
+			ch，ex
+		-->
+		<div class="box1">
+			<div class="box1_son"></div>
+		</div>
+		<div class="box2">
+			<div class="box2_son"></div>
+		</div>
+		<div class="ch">0000000000</div>
+		<h3>	xxxxxxxxxxxxx</h3>
+		<div class="ex"></div>
+	</body>
+</html>

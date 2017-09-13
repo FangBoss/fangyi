@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			/*设为 Flex 布局以后，子元素的float、clear和vertical-align属性将失效。*/
+			
+			ul{
+				margin: 0;
+				padding: 0;
+			}
+			/*display:flex和display：inline-flex*/
+			.a{
+				display:flex ;
+				/*block块元素*/
+				border: 5px solid pink;
+				/*行内元素flex布局*/
+				list-style: none;
+				/*list-style-type: none;*/
+			}
+			.a>li{
+				width: 100px;
+				height: 100px;
+				border: 1px solid black;
+			}
+			
+			/*flex-wrap和flex-flow*/
+			.b{
+				width: 600px;
+				display: flex;
+				border: 5px solid pink;
+				margin-top: 10px ;
+				flex-wrap: nowrap;
+				flex-wrap: wrap;
+				flex-wrap:wrap-reverse;
+				/*默认不换行
+				 1.nowrap
+				 2.wrap
+				 3.wrap-reverse*/
+				
+				/*flex-flow是复合属性，包括
+				 flex-direction
+				 flew-wrap
+				 写法:flex-flow:row wrap*/
+			}
+			.b>li{
+				width: 200px;
+				height: 200px;
+			}
+			.b>li:nth-child(1){
+				width: 200px;
+				background: red;
+			}
+			.b>li:nth-child(2){
+				width: 200px;
+				background: deepskyblue;
+			}
+
+			.b>li:nth-child(3){
+				width: 300px;
+				background: yellow;
+			}
+				
+				
+		 /*justify-content*/
+			.c{
+				width: 600px;
+				display: flex;
+				border: 5px solid pink;
+				margin-top: 10px ;
+				justify-content:flex-start;
+				justify-content: flex-end;
+				justify-content:center;
+				justify-content: space-between;
+				justify-content: space-around;
+			}
+			.c>li{
+				width: 200px;
+				height: 200px;
+			}
+			.c>li:nth-child(1){
+				width: 200px;
+				background: red;
+			}
+			.c>li:nth-child(2){
+				width: 200px;
+				background: deepskyblue;
+			}
+
+			.c>li:nth-child(3){
+				width: 300px;
+				background: yellow;
+			}
+			
+			/*align-items*/
+			.d{
+				display: flex;
+				width: 600px;
+				height: 500px;
+				border: 5px solid pink;
+				margin-top: 10px ;
+				align-items: flex-start;
+				/*顶部对齐（默认）*/
+				align-items: flex-end;
+				/*底部对齐*/
+				align-items:center;
+				/*居中对齐*/
+				align-items:baseline;
+				align-items: stretch;
+				/*垂直方向（交叉轴方向上）对齐方式
+				 1.flex-start 上
+				 2.flex-end   下
+				 3.center     中
+				 4.baseline   基线
+				 5.stretch    拉伸充满，项目不设置高*/
+			}
+			.d>li{
+				width: 200px;
+				/*height: 200px;*/
+			}
+			.d>li:nth-child(1){
+				background: red;
+			}
+			.d>li:nth-child(2){
+				/*height: 250px;*/
+				background: deepskyblue;
+			}
+
+			.d>li:nth-child(3){
+				height: 300px;
+				background: yellow;
+			}
+			
+			
+			.e{
+				display: flex;
+				width: 600px;
+				height: 600px;
+				border: 5px solid pink;
+				/*margin-top: 10px ;*/
+				list-style: none;
+				flex-wrap: wrap;
+				align-content: flex-start;
+				align-content: flex-end;
+				align-content: center;
+				align-content:space-between;
+				align-content:space-around;
+				align-content:stretch;
+			}
+			/*align-content*/
+			/*多行项目对齐方式，默认是stretch
+			 1.flex-start  上
+			 2.flex-end   下
+			 3.center     中
+			 4.space-between 与交叉轴两端对齐
+			 5.space-around  每根轴线两侧的间隔都相等*/
+			
+			.e>li{
+				width: 200px;
+				height: 200px;
+			}
+			.e>li:nth-child(1){
+				width: 200px;
+				background: red;
+			}
+			.e>li:nth-child(2){
+				width: 300px;
+				background: deepskyblue;
+			}
+
+			.e>li:nth-child(3){
+				width: 150px;
+				background: yellow;
+			}
+			
+			.e>li:nth-child(4){
+				width: 100px;
+				background: sandybrown;
+			}
+			
+			.e>li:nth-child(5){
+				width: 300px;
+				background: #0000FF;
+			}
+			
+			/*项目属性
+			  1.order*/
+			.f{
+				width: 600px;
+				height: 600px;
+				display: flex;
+				border: 3px solid black;
+				list-style: none;
+			}
+			.f>li{
+				width: 100px;
+				height: 100px;
+			}
+			.f>li:nth-child(1){
+				height: 200px;
+				background: red;
+				order: 2;
+				/*order属性
+				 值越小，越排在direction前提下的前面*/
+				flex-grow: 1;
+				/*flex-grow*/
+				/*默认值是0，不对项目进行放大处理
+				 项目本身的宽是多少就是多少
+				 设置了flex-grow以后，会平分剩余空间。
+				 然后按照值的大小，分配剩余空间*/
+				
+				flex-shrink: 0;
+				/*flex-shrink属性
+				 1。默认值都是1，当容器尺寸不足时，对项目进行缩小设置
+				 忽略了项目原本的尺寸
+				 2.当属性值为0的情况下，保留其原有尺寸，省下的空间由其他项目平分*/
+				
+				flex-basis: 300px;
+				/*在计算主轴剩余空间之前，定义项目占的空间
+				 再平分剩余空间时，需要先除去此空间尺寸*/
+				
+				flex: 0 1 auto;
+				/*flex是flex-grow，flex-shrink，flex-basis
+				 复合属性
+				 一般的用法，只传入flex-grow这个值，其他的值作为默认值
+				 两个快捷值
+				 1.auto---------1 1 auto
+				 2.none---------0 0 auto
+				 */
+			}
+			.f>li:nth-child(2){
+				height: 400px;
+				background: green;
+				order: 3;
+				flex-grow: 2;
+				
+			}
+			.f>li:nth-child(3){
+				height: 100px;
+				background: blue;
+				order: 1;
+				flex-grow: 1;
+				align-self: flex-end;
+				align-self: center;
+				align-self: auto;
+				align-self: flex-start;
+				align-self: stretch;
+				align-self: baseline;
+				/*align-self属性
+				 项目自身的对齐方式
+				 1.auto
+				 2.flex-start 
+				 3.flex-end
+				 4.center
+				 5.baseline
+				 6.stretch 	自身不设高度*/
+			}
+		</style>
+	</head>
+	<body>
+		<ul class="a">
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<ul class="c">
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<ul class="c">
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<ul class="d">
+			<li>分对策十大</li>
+			<li>XXX</li>
+			<li></li>
+		</ul>
+		<ul class="e">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		
+		<ul class="f">
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</body>
+</html>
